@@ -1,0 +1,29 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração local
+*.local.php
+
+# Arquivos de dados (se você não quiser compartilhar dados de teste)
+# Remova estas linhas se quiser incluir os arquivos JSON
+# data/*.json
+
+# Arquivos de ambiente
+.env
+
+# Dependências (se você adicionar npm/composer no futuro)
+node_modules/
+vendor/
+
+# Arquivos de IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários de upload
+/uploads/temp/

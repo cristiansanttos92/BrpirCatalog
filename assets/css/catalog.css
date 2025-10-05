@@ -1,0 +1,267 @@
+/* Estilos para a tela de catálogo de jogos */
+
+/* Container principal */
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Cabeçalho do catálogo */
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Informações do perfil */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.profile-bio {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    max-width: 400px;
+}
+
+/* Ações do cabeçalho */
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Filtros */
+.catalog-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-container {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.filter-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-select {
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Visualização em grade */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Visualização em lista */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Card de jogo - Visualização em grade */
+.game-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.game-cover {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 1rem;
+}
+
+.game-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.game-platform, .game-status {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    background-color: var(--accent-color-transparent);
+}
+
+.game-rating {
+    color: gold;
+    margin-bottom: 0.5rem;
+}
+
+.game-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* Card de jogo - Visualização em lista */
+.games-list .game-card {
+    display: flex;
+    align-items: center;
+}
+
+.games-list .game-cover {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.games-list .game-info {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.games-list .game-title {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.games-list .game-meta {
+    width: 200px;
+}
+
+.games-list .game-description {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.games-list .game-actions {
+    margin-left: auto;
+}
+
+/* Mensagem de carregamento e vazio */
+.loading-message,
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .catalog-filters {
+        flex-direction: column;
+    }
+    
+    .filter-container {
+        width: 100%;
+    }
+    
+    .filter-select {
+        flex: 1;
+    }
+    
+    .games-list .game-card {
+        flex-direction: column;
+    }
+    
+    .games-list .game-cover {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .games-list .game-info {
+        width: 100%;
+    }
+}
+
+/* Estilos para o botão de alternância de visualização */
+#view-toggle-btn {
+    position: relative;
+}
+
+.grid-icon, .list-icon {
+    transition: opacity 0.3s;
+}
+
+.view-grid .list-icon,
+.view-list .grid-icon {
+    display: none;
+}
